@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\OperationsOfProductController;
 use App\Http\Controllers\ReadProductController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,3 +28,7 @@ Route::post('product/update/{id}',[OperationsOfProductController::class,'update'
 Route::post('product/destroy/{id}',[OperationsOfProductController::class,'destroy'])->name('product.destroy');
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
